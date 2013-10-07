@@ -9,7 +9,13 @@ gem 'mysql2'
 gem 'devise'
 
 group :test do
+	gem 'rspec'
+	gem 'rspec-rails'
+  gem 'cucumber'
   gem 'cucumber-rails', :require => false
+  gem 'webrat'
+  gem 'capybara'
+  gem 'selenium-webdriver'
   # database_cleaner is not required, but highly recommended
   gem 'database_cleaner'
 end
