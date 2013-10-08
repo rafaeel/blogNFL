@@ -24,8 +24,6 @@ When /^I follow the view link for "(.+)"$/ do |name|
   click_link(name)
 end
 
-Then(/^I should confirm a "(.*?)" javascript dialog$/) do |arg1|
-  # selenium.get_alert.should eql("Are you sure?")
-  # selenium.chooseOkOnNextConfirmation(); # selenium.chooseCancelOnNextConfirmation();
-  page.evaluate_script('window.confirm = function() { return true; }')
+Then(/^I should confirm a javascript dialog$/) do
+  page.driver.browser.switch_to.alert.accept
 end

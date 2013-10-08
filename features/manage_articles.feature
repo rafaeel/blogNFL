@@ -48,7 +48,5 @@ Feature: Manage Articles
 		Given I have article titled "New England Patriots, Cincinnati Bengals, Denver Broncos"
 		Given I am on the list of articles 
 		And I follow the view link for "delete_1"
-		Then I should confirm a "Are you sure?" javascript dialog
+		Then I should confirm a javascript dialog
 		Then I should see "Article was successfully destroyed."
-
-		Then I wait "10000000" seconds
