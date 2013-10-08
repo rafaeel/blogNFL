@@ -21,3 +21,4 @@ When(/^I visit profile for "(.*?)"$/) do |arg1|
 	# visit user_url(user)
   visit admin_index_path
 end
+

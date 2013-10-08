@@ -1,5 +1,7 @@
 <h1>Listing articles</h1>
 
+<p id="notice"><%= notice %></p>
+
 <table>
   <tr>
     <th>Title</th>
@@ -10,12 +12,12 @@
   </tr>
 
 <% @articles.each do |article| %>
-  <tr>
+  <tr id="article_#{article.id}">
     <td><%= article.title %></td>
     <td><%= article.post %></td>
-    <td><%= link_to 'Show', article %></td>
+    <td><%= link_to 'Show', article, :id => "show_#{article.id}" %></td>
     <td><%= link_to 'Edit', edit_article_path(article), :id => "edit_#{article.id}" %></td>
-    <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Destroy', article, :id => "delete_#{article.id}", method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>

@@ -1,4 +1,3 @@
-@focus
 Feature: Login Tests
 	In order to test devise
 	As an user

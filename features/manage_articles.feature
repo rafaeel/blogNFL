@@ -28,6 +28,27 @@ Feature: Manage Articles
 		And I should see "The biggest!"
 		And I should have 1 article
 
-#	Scenario: Edit an Article
-#		Given I am on the list of articles
-#		And I follow "edit_1"
+	Scenario: Edit an Article
+		Given I have article titled "New England Patriots, Cincinnati Bengals, Denver Broncos"
+		Given I am on the list of articles
+		And I follow the view link for "edit_2"
+		Then I should see "Editing article"
+		When I fill in "Post" with "The Cincinnati Bengals are a professional American football franchise based in Cincinnati, Ohio."
+		And I press "Update Article"
+		Then I should see "Article was successfully updated."
+
+	Scenario: Show an article 
+		Given I have article titled "New England Patriots, Cincinnati Bengals, Denver Broncos"
+		Given I am on the list of articles 
+		And I follow the view link for "show_3"
+		Then I should see "Title: Denver Broncos"
+
+	# Need DRIVER=selenium parameter on 'cucumber features'
+	Scenario: Delete an article
+		Given I have article titled "New England Patriots, Cincinnati Bengals, Denver Broncos"
+		Given I am on the list of articles 
+		And I follow the view link for "delete_1"
+		Then I should confirm a "Are you sure?" javascript dialog
+		Then I should see "Article was successfully destroyed."
+
+		Then I wait "10000000" seconds

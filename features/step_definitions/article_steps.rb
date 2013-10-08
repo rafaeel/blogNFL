@@ -19,3 +19,13 @@ end
 Then(/^I should have ([0-9]+) article$/) do |arg1|
   Article.count.should be == arg1.to_i
 end
+
+When /^I follow the view link for "(.+)"$/ do |name|
+  click_link(name)
+end
+
+Then(/^I should confirm a "(.*?)" javascript dialog$/) do |arg1|
+  # selenium.get_alert.should eql("Are you sure?")
+  # selenium.chooseOkOnNextConfirmation(); # selenium.chooseCancelOnNextConfirmation();
+  page.evaluate_script('window.confirm = function() { return true; }')
+end
