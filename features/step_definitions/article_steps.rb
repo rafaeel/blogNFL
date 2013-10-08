@@ -26,4 +26,6 @@ end
 
 Then(/^I should confirm a javascript dialog$/) do
   page.driver.browser.switch_to.alert.accept
+  # page.driver.browser.switch_to.alert.dismiss
+  # page.driver.browser.switch_to.alert.text
 end
